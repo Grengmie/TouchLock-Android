@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    主界面布局：标题、使用方法说明、无障碍服务状态、跳转设置的按钮。
+    外层用 ScrollView，保证在小屏幕或大字号下内容也能完整显示。
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/main_title"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <!-- 使用方法说明 -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/main_description"
+            android:textSize="15sp" />
+
+        <!-- 无障碍服务状态，由 MainActivity 在 onResume 中刷新 -->
+        <TextView
+            android:id="@+id/tvServiceStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/accessibility_status_disabled"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- 未开启时的操作提示，开启后由代码设置为 GONE -->
+        <TextView
+            android:id="@+id/tvServiceStatusHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/accessibility_hint_disabled"
+            android:textSize="14sp" />
+
+        <!-- 跳转无障碍设置的按钮 -->
+        <Button
+            android:id="@+id/btnOpenAccessibilitySettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:minHeight="48dp"
+            android:text="@string/open_accessibility_settings" />
+
+        <!-- 遮罩自动隐藏设置：标题 -->
+        <TextView
+            android:id="@+id/tvOverlayDurationTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/overlay_duration_title"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!--
+            时长输入框。
+            显式写成 AppCompatEditText：Material 主题会把布局里的 EditText 替换成
+            MaterialAutoCompleteTextView，这里不需要自动补全能力，用 AppCompat 版本更稳。
+        -->
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etOverlayDurationMs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:hint="@string/overlay_duration_hint"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="5"
+            android:singleLine="true" />
+
+        <!-- 遮罩隐藏后是否继续保持触摸锁定 -->
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbKeepLockedAfterHide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:minHeight="48dp"
+            android:text="@string/keep_locked_after_hide" />
+
+        <!-- 保存设置按钮 -->
+        <Button
+            android:id="@+id/btnSaveOverlayDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:minHeight="48dp"
+            android:text="@string/save_settings" />
+
+    </LinearLayout>
+
+</ScrollView>

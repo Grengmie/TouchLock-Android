@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用主题：Material3 日间/夜间自适应，无 ActionBar -->
+    <style name="Theme.TouchLock" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- 保持默认配色，仅占位，后续按需微调 -->
+    </style>
+</resources>

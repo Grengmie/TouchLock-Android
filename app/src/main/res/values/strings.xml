@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用名称 -->
+    <string name="app_name">TouchLock</string>
+
+    <!-- 主界面标题 -->
+    <string name="main_title">TouchLock</string>
+
+    <!-- 主界面使用方法说明 -->
+    <string name="main_description">使用方法：\n1. 点击下方按钮，在系统「无障碍」设置中开启 TouchLock 服务；\n2. 同时按「音量上 + 音量下」即可锁定触摸：屏幕会先出现一层半透明遮罩提示已锁定，随后遮罩自动隐藏（隐藏时长见下方设置），触摸仍然被锁定，可以正常看视频；\n3. 再次同时按「音量上 + 音量下」即可解锁，熄屏或锁定满 10 分钟也会自动解锁。\n\n锁定时通知栏会显示一条常驻通知（它同时是「当前处于锁定状态」的指示），点击该通知同样可以解锁。</string>
+
+    <!-- 跳转无障碍设置的按钮文字 -->
+    <string name="open_accessibility_settings">打开无障碍设置</string>
+
+    <!-- 找不到无障碍设置页时的提示 -->
+    <string name="accessibility_settings_not_found">未找到无障碍设置页面，请在系统设置中手动开启。</string>
+
+    <!-- 无障碍服务状态：已开启 -->
+    <string name="accessibility_status_enabled">无障碍服务状态：已开启，可以正常使用</string>
+
+    <!-- 无障碍服务状态：未开启 -->
+    <string name="accessibility_status_disabled">无障碍服务状态：未开启，功能不可用</string>
+
+    <!-- 无障碍服务未开启时的操作提示 -->
+    <string name="accessibility_hint_disabled">请点击下方按钮，在系统「无障碍」设置里找到 TouchLock 并开启，然后返回本页面（状态会自动刷新）。</string>
+
+    <!-- 界面上显示「上次崩溃记录」时的标题 -->
+    <string name="crash_report_title">【上次运行崩溃记录，请截图反馈】</string>
+
+    <!-- 遮罩自动隐藏设置的标题 -->
+    <string name="overlay_duration_title">遮罩显示时长（毫秒，默认 300，可填 0 ~ 10000）</string>
+
+    <!-- 遮罩显示时长输入框的提示 -->
+    <string name="overlay_duration_hint">例如 300</string>
+
+    <!-- 遮罩隐藏后是否继续保持触摸锁定 -->
+    <string name="keep_locked_after_hide">遮罩隐藏后继续保持触摸锁定（取消勾选则隐藏后自动解锁）</string>
+
+    <!-- 保存设置按钮 -->
+    <string name="save_settings">保存设置</string>
+
+    <!-- 保存成功的提示 -->
+    <string name="settings_saved">设置已保存，下次锁定时生效</string>
+
+    <!-- 输入时长格式错误时的提示 -->
+    <string name="settings_invalid_duration">请输入 0 ~ 10000 之间的整数毫秒</string>
+
+    <!-- 无障碍服务描述，显示在系统「设置 -> 无障碍 -> TouchLock」条目下方 -->
+    <string name="accessibility_service_description">开启本服务后，同时按「音量上 + 音量下」即可切换触摸锁定状态，用于防止误触。本服务不会读取屏幕内容，也不会修改系统设置。</string>
+
+    <!-- 锁定覆盖层上的提示文字 -->
+    <string name="overlay_lock_hint">触摸已锁定，按音量上+下解锁</string>
+
+    <!-- 锁定状态通知所在渠道的名称，显示在系统通知设置里 -->
+    <string name="notification_channel_name">触摸锁定状态</string>
+
+    <!-- 通知渠道的说明文字 -->
+    <string name="notification_channel_description">显示触摸锁定是否处于开启状态，并提供解锁入口。</string>
+
+    <!-- 锁定状态通知的标题 -->
+    <string name="notification_locked_title">触摸已锁定</string>
+
+    <!-- 锁定状态通知的正文，说明解锁方式 -->
+    <string name="notification_locked_text">点击本通知解锁，或同时按音量上+下解锁；锁定 10 分钟后会自动解锁。</string>
+</resources>

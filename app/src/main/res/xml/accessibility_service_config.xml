@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    无障碍服务配置（在 AndroidManifest.xml 中通过 meta-data 引用）。
+
+    canRequestFilterKeyEvents + flagRequestFilterKeyEvents：
+        让服务通过 onKeyEvent 接收物理按键事件，
+        这是检测「音量上 + 音量下」组合键的前提。
+    accessibilityEventTypes=typeAllMask：
+        服务声明为关注全部事件类型（本服务实际不处理窗口事件，仅满足按键过滤的注册要求）。
+    canRetrieveWindowContent=false：
+        本应用不读取任何窗口内容，保持最小权限，避免系统把服务标记为可读取敏感信息。
+    notificationTimeout=100：
+        事件合并间隔 100ms，避免按键事件被过度合并导致漏掉一次按下。
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagRequestFilterKeyEvents|flagDefault"
+    android:canRequestFilterKeyEvents="true"
+    android:canRetrieveWindowContent="false"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="100" />

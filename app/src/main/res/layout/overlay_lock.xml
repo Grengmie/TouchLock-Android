@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    触摸锁定覆盖层布局。
+
+    根布局撑满全屏，背景为半透明黑（#99000000，约 60% 不透明度）。
+    触摸事件不在这里处理：LockOverlayManager 会给根视图设置
+    setOnTouchListener，返回 true 把整段手势全部消费掉。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000">
+
+    <!-- 图标与文字居中显示 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- 锁图标：直接用系统内置图标，不必额外新增 drawable 文件 -->
+        <ImageView
+            android:id="@+id/ivLockIcon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:importantForAccessibility="no"
+            android:src="@android:drawable/ic_lock_lock"
+            android:tint="#FFFFFFFF" />
+
+        <!-- 解锁提示文字，内容在 strings.xml 中维护 -->
+        <TextView
+            android:id="@+id/tvLockHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/overlay_lock_hint"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</FrameLayout>
